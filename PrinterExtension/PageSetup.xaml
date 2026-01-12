@@ -1,0 +1,112 @@
+﻿<Page
+    x:Class="PrinterExtension.PageSetup"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PrinterExtension">
+
+    <ScrollViewer>
+        <Grid Padding="20">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Title -->
+            <TextBlock
+                Text="Page Setup"
+                FontSize="24"
+                FontWeight="SemiBold"/>
+
+            <!-- Main content -->
+            <Pivot Grid.Row="1" Margin="0,20,0,0">
+
+                <!-- Margins TAB -->
+                <PivotItem Header="Margins">
+                    <StackPanel Spacing="20">
+
+                        <!-- Margins Section -->
+                        <TextBlock Text="Margins" FontWeight="Bold"/>
+
+                        <Grid ColumnSpacing="20" RowSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Top"/>
+                            <TextBox Grid.Column="1" Text="1&quot;"/>
+
+                            <TextBlock Grid.Row="1" Text="Bottom"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Text="1&quot;"/>
+
+                            <TextBlock Grid.Row="2" Text="Left"/>
+                            <TextBox Grid.Row="2" Grid.Column="1" Text="1&quot;"/>
+
+                            <TextBlock Grid.Row="3" Text="Right"/>
+                            <TextBox Grid.Row="3" Grid.Column="1" Text="1&quot;"/>
+                        </Grid>
+
+                        <!-- Orientation -->
+                        <TextBlock Text="Orientation" FontWeight="Bold"/>
+
+                        <StackPanel Orientation="Horizontal" Spacing="20">
+                            <RadioButton Content="Portrait" IsChecked="True"/>
+                            <RadioButton Content="Landscape"/>
+                        </StackPanel>
+
+                        <!-- Pages -->
+                        <TextBlock Text="Pages" FontWeight="Bold"/>
+
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="Multiple pages"/>
+                            <ComboBox Width="150">
+                                <ComboBoxItem Content="Normal"/>
+                                <ComboBoxItem Content="Mirror margins"/>
+                            </ComboBox>
+                        </StackPanel>
+
+                    </StackPanel>
+                </PivotItem>
+
+                <!-- Paper TAB -->
+                <PivotItem Header="Paper">
+                    <TextBlock Text="Paper settings "/>
+                </PivotItem>
+
+                <!-- Layout TAB -->
+                <PivotItem Header="Layout">
+                    <TextBlock Text="Layout settings "/>
+                </PivotItem>
+
+                <!-- Document Grid TAB -->
+                <PivotItem Header="Document Grid">
+                    <TextBlock Text="Document grid settings "/>
+                </PivotItem>
+
+            </Pivot>
+
+            <!-- Buttons -->
+            <StackPanel
+                Grid.Row="2"
+                Orientation="Horizontal"
+                HorizontalAlignment="Right"
+                Spacing="10"
+                Margin="0,20,0,0">
+
+                <Button Content="OK" Width="80"/>
+                <Button Content="Cancel" Width="80"/>
+            </StackPanel>
+
+        </Grid>
+    </ScrollViewer>
+
+</Page>
